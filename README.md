@@ -41,8 +41,6 @@ The documentation is automatically generated from JSDoc `@swagger` annotations i
 
 ## 📋 Prerequisites
 
-> **💻 Multi-OS Support**: This project works on **Windows**, **macOS**, and **Linux**. See [Multi-OS Compatibility Guide](./docs/MULTI_OS_COMPATIBILITY.md) for platform-specific instructions.
-
 - **Node.js**: v18.0.0 or higher
 - **MongoDB**: v5.0 or higher
 - **Redis**: v6.0 or higher (optional, for caching)
@@ -58,14 +56,6 @@ The documentation is automatically generated from JSDoc `@swagger` annotations i
 
 For the fastest setup, use our automated setup script:
 
-**Using npm (Works on all platforms):**
-```bash
-git clone <repository-url>
-cd sportification-be
-npm run setup:env
-```
-
-**Or using shell script (Unix/Linux/macOS only):**
 ```bash
 git clone <repository-url>
 cd sportification-be
@@ -99,14 +89,8 @@ This script will:
 
    We provide an automated script to set up your local environment with secure secrets:
 
-   **Cross-platform (recommended):**
    ```bash
    # Run the interactive setup script
-   npm run setup:env
-   ```
-
-   **Or on Unix/Linux/macOS:**
-   ```bash
    ./scripts/development/setup-local-env.sh
    ```
 

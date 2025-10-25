@@ -2,19 +2,6 @@
 # ============================================================================
 # Convenience commands for common development and deployment tasks
 # ============================================================================
-# 
-# NOTE: This Makefile requires GNU Make (Unix/Linux/macOS)
-# Windows users: Use npm scripts instead - they provide equivalent functionality
-# and work on all platforms. See package.json for available scripts.
-#
-# Examples:
-#   make install    →  npm ci
-#   make dev        →  npm run dev
-#   make test       →  npm test
-#   make clean      →  npm run clean
-#
-# For full multi-OS compatibility guide, see: docs/MULTI_OS_COMPATIBILITY.md
-# ============================================================================
 
 .PHONY: help install dev build test lint format clean docker-build docker-up docker-down deploy-dev deploy-test deploy-prod aws-setup terraform-init terraform-plan terraform-apply
 

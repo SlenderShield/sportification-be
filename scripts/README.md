@@ -7,25 +7,16 @@ This directory contains automation scripts for development, deployment, and data
 ```
 scripts/
 ├── development/               # Development and setup scripts
-│   ├── setup-local-env.sh    # Local environment setup (Unix)
-│   ├── setup-local-env.js    # Local environment setup (Cross-platform)
-│   ├── setup.sh              # Initial project setup (Unix)
-│   ├── setup.bat             # Initial project setup (Windows Batch)
-│   ├── setup.ps1             # Initial project setup (Windows PowerShell)
-│   └── health-check.sh       # Health check script (Unix)
+│   ├── setup-local-env.sh    # Local environment setup
+│   ├── setup.sh              # Initial project setup
+│   └── health-check.sh       # Health check script
 │
 ├── deployment/                # Deployment automation
-│   ├── deploy.sh             # Deployment script (Unix)
-│   ├── deploy.bat            # Deployment wrapper (Windows)
-│   └── aws-setup.sh          # AWS infrastructure setup (Unix)
+│   ├── deploy.sh             # Deployment script
+│   └── aws-setup.sh          # AWS infrastructure setup
 │
-├── database/                  # Database scripts
-│   └── mongo-init.js         # MongoDB initialization
-│
-├── make-executable.js         # Cross-platform script permissions
-├── health-check.js           # Cross-platform health checker
-├── view-logs.js              # Cross-platform log viewer
-└── setup.js                  # Cross-platform project setup
+└── database/                  # Database scripts
+    └── mongo-init.js         # MongoDB initialization
 ```
 
 ## 🚀 Development Scripts
@@ -120,37 +111,15 @@ docker-compose exec mongodb mongo /scripts/mongo-init.js
 
 ## 🔧 Script Permissions
 
-### Unix/Linux/macOS
-
-Scripts need execute permissions on Unix-like systems:
+All scripts should have execute permissions:
 
 ```bash
-# Using npm script (recommended - works on all platforms)
-npm run setup
-
-# Or manually with Node.js
-node scripts/make-executable.js
-
-# Or traditional Unix command
+# Grant execute permission
 chmod +x scripts/**/*.sh
+
+# Or use the setup command
+npm run setup
 ```
-
-### Windows
-
-Execute permissions don't apply on Windows. Use one of these methods:
-
-```powershell
-# PowerShell script
-.\scripts\development\setup.ps1
-
-# Batch file
-.\scripts\development\setup.bat
-
-# Or npm scripts (works everywhere)
-npm run setup:env
-```
-
-**Note:** For cross-platform compatibility, prefer using npm scripts which work identically on all operating systems.
 
 ## 📝 Script Conventions
 
@@ -231,36 +200,10 @@ shellcheck scripts/**/*.sh
 
 ## 🆘 Troubleshooting
 
-### Permission Denied (Unix/Linux/macOS)
+### Permission Denied
 
 ```bash
-# Use npm script (recommended)
-npm run setup
-
-# Or use Node.js script
-node scripts/make-executable.js
-
-# Or manually
 chmod +x scripts/path/to/script.sh
-```
-
-### Scripts Won't Run on Windows
-
-Windows doesn't support `.sh` scripts natively. Use alternatives:
-
-```powershell
-# Option 1: Use npm scripts (recommended - works everywhere)
-npm run setup:env
-npm run health
-
-# Option 2: Use PowerShell scripts
-.\scripts\development\setup.ps1
-
-# Option 3: Use Batch files
-.\scripts\development\setup.bat
-
-# Option 4: Use Git Bash (if installed)
-bash scripts/development/setup.sh
 ```
 
 ### Script Not Found
